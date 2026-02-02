@@ -1,12 +1,7 @@
 -- ui.lua
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-
-local Window = OrionLib:MakeWindow({
-	Name = "SILVER Rly | v1.0.0",
-	HidePremium = false,
-	SaveConfig = true,
-	ConfigFolder = "TapSim"
-})
+local OrionLib = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/shlexware/Orion/main/source"
+))()
 
 local Vars = {
 	AutoTap = false,
@@ -14,12 +9,16 @@ local Vars = {
 	AutoRebirth = false
 }
 
+local Window = OrionLib:MakeWindow({
+	Name = "Tap Simulator | v2.6.0",
+	SaveConfig = true,
+	ConfigFolder = "TapSim"
+})
+
 local MainTab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998"
 })
-
-MainTab:AddSection({ Name = "Auto Clicker" })
 
 MainTab:AddToggle({
 	Name = "Auto Tap",
@@ -40,8 +39,6 @@ MainTab:AddSlider({
 		Vars.Delay = v / 1000
 	end
 })
-
-MainTab:AddSection({ Name = "Auto Rebirth" })
 
 MainTab:AddToggle({
 	Name = "Auto Rebirth",
